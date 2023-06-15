@@ -1,0 +1,85 @@
+body {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+#form {
+  margin: 40px;
+}
+
+#form > .wrapper {
+  width: 30vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px
+}
+
+#countries {
+  position: absolute;
+  right: 0;
+}
+
+.form-wrapper {
+  position: relative;
+}
+
+.form-wrapper > input {
+  outline: none;
+  border: none;
+  padding: 2px;
+}
+
+.form-wrapper > label {
+  pointer-events: none;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  font-size: 16px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.form-wrapper input:focus ~ label,
+.form-wrapper input:valid ~ label{
+  transform: translateY(-20px);
+  font-size: 14px;
+  color: #0ea5e9;
+}
+
+
+.form-wrapper > .underline {
+  bottom: 0;
+  background: #d1d5db;
+  height: 2px;
+  width: 100%;
+}
+
+.form-wrapper > .underline::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: #0ea5e9;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+.form-wrapper input:focus ~ .underline::before,
+.form-wrapper input:valid ~ .underline::before{
+  transform: scale(1);
+}
+
+#submit {
+  margin-top: 40px;
+  height: 40px;
+  width: 120px;
+  text-transform: uppercase;
+  background-color: white;
+  border:none;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: scale 0.3s ease-in-out;
+}
+
+#submit:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+}
