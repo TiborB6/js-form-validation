@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 
-  <script src="validation.js"></script>
+  <script defer src="validation.js"></script>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="normalize.css">
 
@@ -21,17 +21,22 @@
         <div class="form-wrapper">
           <input id="first-name" type="text" required>
           <div class="underline"></div>
-          <label for="first-name">First Name</label>
+          <label for="first-name">First Name *
+            <span id="first-name-error-message"></span>
+          </label>
         </div>      
         <div class="form-wrapper">
-          <input id="second-name" type="text">
+          <input id="second-name" type="text" required>
           <div class="underline"></div>
-          <label for="second-name">Last Name</label>
+          <label for="second-name">Last Name *
+            <span id="second-name-error-message"></span>
+          </label>
         </div>
         <div class="form-wrapper">
-          <input type="email" name="email" id="email">
+          <input type="email" name="email" id="email" required>
           <div class="underline"></div>
-          <label for="email">Email</label>
+          <label for="email">Email *
+            <span id="email-error-message"></span></label>
         </div>
         <div class="form-wrapper">
           <input type="tel" name="tel" id="tel">
@@ -77,19 +82,25 @@
           </select>
         </div>
         <div class="form-wrapper">
-          <input type="text" name="zip" id="zip">
+          <input type="text" name="zip" id="zip" required>
           <div class="underline"></div>
-          <label for="zip">Zip Code</label>
+          <label for="zip">Zip Code *
+            <span id="zip-error-message"></span>
+          </label>
         </div>
         <div class="form-wrapper">
-          <input type="password" name="psw" id="psw">
+          <input type="password" name="psw" id="psw" required>
           <div class="underline"></div>
-          <label for="psw">Password</label>
+          <label for="psw">Password *
+            <span id="psw-error-message"></span>
+          </label>
         </div>
         <div class="form-wrapper">
-          <input type="password" id="psw-con">
+          <input type="password" id="psw-con" required>
           <div class="underline"></div>
-          <label for="psw-con">Reenter Password</label>
+          <label for="psw-con">Reenter Password *
+            <span id="psw-con-error-message"></span>
+          </label>
         </div>
       </div>
       <button type="submit" id="submit">Submit</button>

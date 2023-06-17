@@ -9,7 +9,7 @@ body {
 #form > .wrapper {
   width: 30vw;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
   gap: 40px
 }
 
@@ -37,13 +37,24 @@ body {
   transition: transform 0.3s ease-in-out;
 }
 
-.form-wrapper input:focus ~ label,
-.form-wrapper input:valid ~ label{
+.form-wrapper input:focus:valid ~ label,
+.form-wrapper input.valid ~ label{
   transform: translateY(-20px);
   font-size: 14px;
   color: #0ea5e9;
 }
 
+.form-wrapper input:focus:invalid ~ label,
+.form-wrapper input.invalid ~ label{
+  transform: translateY(-20px);
+  font-size: 14px;
+  color: red!important;
+}
+
+#error-message {
+  color: red;
+  font-size: 12px;
+}
 
 .form-wrapper > .underline {
   bottom: 0;
@@ -59,14 +70,21 @@ body {
   width: 100%;
   background: #0ea5e9;
   transform: scaleX(0);
-  transform-origin: left;
+  transform-origin: center;
   transition: transform 0.3s ease-in-out;
 }
 
-.form-wrapper input:focus ~ .underline::before,
-.form-wrapper input:valid ~ .underline::before{
+.form-wrapper input:focus:valid ~ .underline::before,
+.form-wrapper input.valid ~ .underline::before{
   transform: scale(1);
 }
+
+.form-wrapper input:focus:invalid ~ .underline::before,
+.form-wrapper input.invalid ~ .underline::before{
+  transform: scale(1);
+  background: red;
+}
+
 
 #submit {
   margin-top: 40px;
